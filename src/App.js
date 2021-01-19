@@ -1,13 +1,21 @@
+import React, {useState, useEffect} from "react";
 import logo from './logo.svg';
 import './App.css';
 import { NavBar } from './components/NavBar/NavBar';
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
+import { ItemCount } from './components/ItemCount/ItemCount';
+
 
 function App() {
+	
+
+
+
   return (
     <div className="App">
 		<NavBar />		
 		<ItemListContainer greeting={'BIENVENIDO'}/>
+		<ItemCount />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
