@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+/*import React, {useState} from "react";*/
 import logo from './logo.svg';
 import './App.css';
 import { NavBar } from './components/NavBar/NavBar';
@@ -15,7 +15,8 @@ function App() {
     <div className="App">
 		<NavBar />		
 		<ItemListContainer greeting={'BIENVENIDO'}/>
-		<ItemCount />
+		<ItemCount stock={15} initial={1}/>
+    <br/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
