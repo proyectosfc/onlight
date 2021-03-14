@@ -1,9 +1,9 @@
 /*import React, {useState} from "react";*/
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 import { NavBar } from './components/NavBar/NavBar';
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
-import { ItemCount } from './components/ItemCount/ItemCount';
+//import { ItemCount } from './components/ItemCount/ItemCount';
 
 
 function App() {
@@ -15,10 +15,10 @@ function App() {
     <div className="App">
 		<NavBar />		
 		<ItemListContainer greeting={'BIENVENIDO'}/>
-		<ItemCount stock={15} initial={1}/>
+		{/*<ItemCount stock={15} initial={1}/>*/}
     <br/>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        {/*<img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -29,7 +29,7 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
-        </a>
+        </a>*/}
       </header>
     </div>
   );

@@ -33,14 +33,16 @@ const resetContador = () => {
 
     
    return (
-	<div>	 
-		<button onClick={Aumentar}>+</button>
-      <h3>Stock: {stock}</h3>
-      <h3>Cantidad Seleccionada: {contador}</h3>
-	   <button onClick={Disminuir}>-</button>
-		<br/>
-      <br/>
+	<div>	 		
+      <h5>Stock: {stock}</h5>
+      <h5>Cantidad Seleccionada: {contador}</h5>
+	   <button onClick={Disminuir}>-</button> <button onClick={Aumentar}>+</button>
+		<br/><br/>
 		<button onClick={agregarCarrito}>Agregar al Carrito</button>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
 	</div>
    )
 }
