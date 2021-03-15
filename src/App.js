@@ -1,22 +1,16 @@
-/*import React, {useState} from "react";*/
-//import logo from './logo.svg';
-import './App.css';
-import { NavBar } from './components/NavBar/NavBar';
-import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
+import React from "react";
+import "./App.css";
+import { NavBar } from "./components/NavBar/NavBar";
+import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer";
 //import { ItemCount } from './components/ItemCount/ItemCount';
 
-
 function App() {
-	
-
-
-
   return (
     <div className="App">
-		<NavBar />		
-		<ItemListContainer greeting={'BIENVENIDO'}/>
-		{/*<ItemCount stock={15} initial={1}/>*/}
-    <br/>
+      <NavBar />
+      <ItemListContainer greeting={"BIENVENIDO"} />
+      {/*<ItemCount stock={15} initial={1}/>*/}
+      <br />
       <header className="App-header">
         {/*<img src={logo} className="App-logo" alt="logo" />
         <p>

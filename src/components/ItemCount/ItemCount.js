@@ -1,48 +1,44 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
-export const ItemCount = ({stock, initial}) => {
+export const ItemCount = ({ stock, initial }) => {
+  const [contador, setContador] = useState(initial);
 
-const [contador, setContador] = useState(initial);
+  const Aumentar = () => {
+    if (contador >= stock) {
+      alert("Sin Stock");
+    } else {
+      setContador(contador + 1);
+    }
+  };
 
-const Aumentar = () => {
-   if(contador >= stock) {
-      alert ('Sin Stock');
-   }  else{ 
-      setContador(contador+1)	
-      }   
-}
+  const Disminuir = () => {
+    if (contador > 1) {
+      setContador(contador - 1);
+    }
+  };
 
-const Disminuir = () => {
-   if(contador > 1) {
-      setContador(contador-1)
-   }	
-}
-
-const agregarCarrito = () => {
-   if (contador <= stock) {
+  const agregarCarrito = () => {
+    if (contador <= stock) {
       setContador(contador);
-      alert(contador + " producto(s) agregado(s) al carrito!")
-   }   
-}
+      alert(contador + " producto(s) agregado(s) al carrito!");
+    }
+  };
 
-/*
-const resetContador = () => {
-	setContador(1)
-}
-*/
-
-    
-   return (
-	<div>	 		
-      <h5>Stock: {stock}</h5>
-      <h5>Cantidad Seleccionada: {contador}</h5>
-	   <button onClick={Disminuir}>-</button> <button onClick={Aumentar}>+</button>
-		<br/><br/>
-		<button onClick={agregarCarrito}>Agregar al Carrito</button>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-	</div>
-   )
-}
+  return (
+    <div className="d-flex justify-content-center flex-column">
+      <span>Stock: {stock}</span>
+      <p>Cantidad Seleccionada: {contador}</p>
+      <div className="d-flex justify-content-around mb-3 ms-auto me-auto w-25">
+        <button className="btn btn-secondary" onClick={Disminuir}>
+          -
+        </button>
+        <button className="btn btn-primary" onClick={Aumentar}>
+          +
+        </button>
+      </div>
+      <button onClick={agregarCarrito} className="bnt btn-primary">
+        Agregar al Carrito
+      </button>
+    </div>
+  );
+};

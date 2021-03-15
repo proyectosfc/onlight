@@ -1,24 +1,25 @@
-import React from 'react';
-import { ItemCount } from '../../components/ItemCount/ItemCount';
-//import './Item.css';
+import React from "react";
+import { ItemCount } from "../../components/ItemCount/ItemCount";
 
-export const Item = ({item}) => {
-
+export const Item = ({ item }) => {
   return (
-    <React.Fragment>
-      {/*<div>{item.title} {item.description}</div>*/}
-      <br></br>           
+    <div className="m-3 card item-product" style={{ flexBasis: "26.33%" }}>
       <div className="card-image">
-        <img src={item.pictureUrl} className="img-responsive" />
+        <img
+          src={item.pictureUrl}
+          className="img-responsive"
+          alt={item.tile}
+          width="180px"
+        />
       </div>
       <div className="card-header">
-        <div className="card-title h5">{item.title}</div>
-        <div className="card-subtitle text-gray">${item.price}</div>
+        <div className="card-title h5 text-start">{item.title}</div>
+        <div className="card-subtitle text-gray text-start">${item.price}</div>
+        <div className="card-subtitle text-gray text-start mt-2">
+          {item.title} {item.description}
+        </div>
       </div>
-      <div><ItemCount stock={15} initial={1}/></div>
-      {/*<div className="card-footer">
-        <button className="btn btn-primary">Agregar al carrito</button>
-  </div>*/}      
-    </React.Fragment>
-  )
-}
+      <ItemCount stock={15} initial={1} />
+    </div>
+  );
+};
