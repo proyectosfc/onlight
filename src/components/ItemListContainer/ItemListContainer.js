@@ -45,30 +45,29 @@ const items = [
 ];
 
 export const ItemListContainer = ({ greeting }) => {
-  const [products, setProducts] = useState(null);
+  const [products, setProducts] = useState([]);
   useEffect(() => {
-    (async () => {
-      try {
-        setTimeout(() => {
-          setProducts(items);
-        }, 2000);
-      } catch (error) {
-        console.log(error);
-      }
-    })();
-  }, []);
+    const call = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(items);
+      }, 2000);
+    });
 
-  if (!products)
-    return (
-      <div>
-        <h2>Cargando</h2>
-      </div>
-    );
+    call.then((response) => {
+      setProducts(response);
+    });
+  }, []);
 
   return (
     <div>
       <p>{greeting}</p>
-      {products.length && <ItemList items={products} />}
+      {products.length ? (
+        <ItemList items={products} />
+      ) : (
+        <div>
+          <p>Hubo un error</p>
+        </div>
+      )}
     </div>
   );
 };
